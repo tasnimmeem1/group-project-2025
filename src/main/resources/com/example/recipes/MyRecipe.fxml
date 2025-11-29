@@ -1,37 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="713.0" prefWidth="1315.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipes.MyRcpController">
-   <children>
-      <SplitPane dividerPositions="0.29797979797979796, 0.5" layoutY="-1.0" prefHeight="713.0" prefWidth="1315.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <GridPane layoutX="-2.0" layoutY="-2.0" prefHeight="418.0" prefWidth="388.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                     <children>
-                        <ChoiceBox fx:id="myCuisineChoicebox" prefHeight="25.0" prefWidth="333.0" GridPane.halignment="CENTER" />
-                        <ChoiceBox fx:id="myProteinChoicebox" prefHeight="25.0" prefWidth="333.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
-                        <ChoiceBox fx:id="myLengthChoicebox" prefHeight="25.0" prefWidth="333.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-                        <ChoiceBox fx:id="myDiffChoicebox" prefHeight="25.0" prefWidth="333.0" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                     </children>
-                  </GridPane>
-                  <ChoiceBox fx:id="pageChoice" layoutX="14.0" layoutY="600.0" prefHeight="25.0" prefWidth="211.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="711.0" prefWidth="293.0" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-        </items>
-      </SplitPane>
-   </children>
-</AnchorPane>
+<BorderPane prefHeight="800" prefWidth="1300" style="-fx-background-image: url('/com/example/recipes/images/recipe_bg.jpg');                    -fx-background-size: cover;" stylesheets="@myrecipe.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipes.MyRcpController">
+
+    <top>
+        <Label styleClass="title-text" text="My Favorites" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+        <HBox spacing="20" style="-fx-padding: 20;">
+            <children>
+
+                <!-- ========= SEARCH FILTERS ========= -->
+                <VBox prefWidth="300" spacing="20" styleClass="glass-pane">
+                    <children>
+                        <ComboBox fx:id="cuisineBox" promptText="Cuisine" />
+                        <ComboBox fx:id="proteinBox" promptText="Protein" />
+                        <ComboBox fx:id="timeBox" promptText="Length of Time" />
+                        <ComboBox fx:id="difficultyBox" promptText="Difficulty" />
+
+                        <Button onAction="#showFavorites" styleClass="small-btn" text="My Favorites" />
+      
+                        <Button onAction="#goHome" prefHeight="65.0" prefWidth="229.0" styleClass="small-btn" text="Back to Home" />
+                    </children>
+                </VBox>
+
+                <!-- =========  RESULTS LIST ========= -->
+                <VBox prefWidth="400" spacing="10" styleClass="glass-pane">
+                    <children>
+                        <Label styleClass="section-title" text="Recipes:" />
+                        <ListView fx:id="recipeList" />
+                    </children>
+                </VBox>
+
+                <!-- ========= RECIPE DETAILS ========= -->
+                <VBox prefWidth="450" spacing="10" styleClass="glass-pane">
+                    <children>
+                        <Label styleClass="section-title" text="Recipe Details:" />
+                  <ImageView fitHeight="150.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextArea fx:id="recipeDetails" editable="false" prefHeight="500" prefWidth="450" wrapText="true" />
+                    </children>
+                </VBox>
+
+            </children>
+        </HBox>
+    </center>
+
+</BorderPane>

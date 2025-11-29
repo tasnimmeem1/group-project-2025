@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
+<BorderPane prefHeight="900" prefWidth="1300" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.recipes.ShareRcpController">
 
-<AnchorPane prefHeight="707.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+    <!-- TOP: ChoiceBoxes + Upload button + Preview -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
 
-</AnchorPane>
+            <ChoiceBox fx:id="cuisineChoice" prefWidth="200" />
+            <ChoiceBox fx:id="proteinChoice" prefWidth="200" />
+            <ChoiceBox fx:id="timeChoice" prefWidth="250" />
+            <ChoiceBox fx:id="difficultyChoice" prefWidth="150" />
+
+            <Button onAction="#uploadImage" text="Upload Image" />
+            <ImageView fx:id="imagePreview" fitHeight="80" fitWidth="80" preserveRatio="true" />
+         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="Save Recipe" />
+        </HBox>
+    </top>
+
+    <!-- CENTER: Large TextArea for the recipe -->
+    <center>
+        <TextArea fx:id="recipeText" promptText="Enter your full recipe here..." wrapText="true" />
+    </center>
+
+</BorderPane>
