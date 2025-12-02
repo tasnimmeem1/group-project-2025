@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600"
+            prefWidth="1100"
+            xmlns="http://javafx.com/javafx/23"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group.project.CalorieCalculatorController">
+
+    <children>
+
+        <!-- Background image, image is set from controller in initialize() -->
+        <ImageView fx:id="backgroundImageView"
+                   fitHeight="600.0"
+                   fitWidth="1100.0"
+                   preserveRatio="false"
+                   AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0">
+            <effect>
+                <GaussianBlur radius="20" />
+            </effect>
+         <image>
+            <Image url="@images/Calculator_2.jpg" />
+         </image>
+        </ImageView>
+
+        <!-- Circular calorie pie chart on the left -->
+        <StackPane prefHeight="260"
+                   prefWidth="260"
+                   AnchorPane.leftAnchor="140.0"
+                   AnchorPane.topAnchor="150.0">
+            <children>
+                <PieChart fx:id="caloriePieChart"
+                          labelsVisible="false"
+                          legendVisible="false"
+                          prefHeight="260"
+                          prefWidth="260" />
+                <Label fx:id="lblCaloriesCenter"
+                       style="-fx-font-family: 'Times New Roman'; -fx-font-size: 24; -fx-font-weight: bold;"
+                       text="0 cal" />
+            </children>
+        </StackPane>
+
+        <!-- Description under the chart -->
+        <Label fx:id="lblChartDescription" prefWidth="320.0"
+               style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14; -fx-text-fill: white;"
+               text="Consumed vs remaining calories (goal: 2000 cal)"
+               wrapText="true"
+               AnchorPane.leftAnchor="120.0"
+               AnchorPane.topAnchor="430.0" />
+
+        <!-- Right side content: semi-transparent card over the background -->
+        <VBox alignment="TOP_LEFT" spacing="18" style="
+        -fx-background-color: rgba(255,255,255,0.70);
+        -fx-background-radius: 18;
+        -fx-padding: 18;
+            " AnchorPane.leftAnchor="520.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="40.0">
+
+            <padding>
+                <Insets bottom="10" left="5" right="5" top="5" />
+            </padding>
+
+            <!-- Title -->
+            <Label style="-fx-font-family: 'Times New Roman'; -fx-font-size: 22; -fx-font-weight: bold;" text="Calorie and Nutrition Calculator" />
+
+            <!-- Recipe search area -->
+            <VBox spacing="6">
+                <children>
+                    <Label style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Enter recipe name" />
+
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <children>
+                            <TextField fx:id="txtRecipeName" prefWidth="280" promptText="e.g. chicken-salad or beef-taco" style="-fx-font-family: 'Times New Roman';" />
+                            <Button fx:id="btnSearch" onAction="#handleSearch" prefWidth="60" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 16;" text="🔍" />
+                        </children>
+                    </HBox>
+                </children>
+            </VBox>
+
+            <!-- Nutrient rows (including servings) -->
+            <VBox spacing="10">
+
+                <!-- Servings -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Label prefWidth="90" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Servings" />
+                        <TextField fx:id="txtServings" prefWidth="220" style="-fx-font-family: 'Times New Roman';" text="1" />
+                    </children>
+                </HBox>
+
+                <!-- Protein -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Label prefWidth="90" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Protein" />
+                        <TextField fx:id="txtProtein" prefWidth="220" style="-fx-font-family: 'Times New Roman';" text="0" />
+                        <Label fx:id="lblProteinPercent" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="0 %" />
+                    </children>
+                </HBox>
+
+                <!-- Calories -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Label prefWidth="90" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Calories" />
+                        <TextField fx:id="txtCalories" prefWidth="220" style="-fx-font-family: 'Times New Roman';" text="0" />
+                        <Label fx:id="lblCaloriesPercent" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="0 %" />
+                    </children>
+                </HBox>
+
+                <!-- Fat -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Label prefWidth="90" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Fat" />
+                        <TextField fx:id="txtFat" prefWidth="220" style="-fx-font-family: 'Times New Roman';" text="0" />
+                        <Label fx:id="lblFatPercent" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="0 %" />
+                    </children>
+                </HBox>
+
+                <!-- Carbs -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Label prefWidth="90" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Carbs" />
+                        <TextField fx:id="txtCarbs" prefWidth="220" style="-fx-font-family: 'Times New Roman';" text="0" />
+                        <Label fx:id="lblCarbsPercent" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="0 %" />
+                    </children>
+                </HBox>
+
+                <!-- Vitamins -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <children>
+                        <Label prefWidth="90" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="Vitamins" />
+                        <TextField fx:id="txtVitamins" prefWidth="220" style="-fx-font-family: 'Times New Roman';" text="0" />
+                        <Label fx:id="lblVitaminsPercent" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="0 %" />
+                    </children>
+                </HBox>
+
+            </VBox>
+
+            <!-- Buttons -->
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <children>
+                    <Button fx:id="btnCalculate" onAction="#calculatePercentages" prefWidth="150" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14; -fx-background-color: #d9d9d9;" text="Calculate" />
+
+                    <Button onAction="#goBackHome" prefWidth="170" style="
+                    -fx-font-family: 'Times New Roman';
+                    -fx-font-size: 14;
+                    -fx-background-color: #f2f2f2;
+                    -fx-border-color: purple;
+                    -fx-border-width: 2;
+                    -fx-border-radius: 6;
+                    -fx-background-radius: 6;
+                    " text="Back to Home" />
+                </children>
+            </HBox>
+
+            <!-- Advice label -->
+            <Label fx:id="lblAdvice" prefWidth="400" style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" text="" wrapText="true" />
+
+            <!-- Color legend buttons -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <children>
+                    <Button style="-fx-font-family: 'Times New Roman'; -fx-font-size: 12;                                    -fx-background-color: #4cc9f0; -fx-text-fill: white;" text="0 to 40 percent of daily" />
+                    <Button style="-fx-font-family: 'Times New Roman'; -fx-font-size: 12;                                    -fx-background-color: #f9c74f; -fx-text-fill: black;" text="40 to 80 percent of daily" />
+                    <Button style="-fx-font-family: 'Times New Roman'; -fx-font-size: 12;                                    -fx-background-color: #f94144; -fx-text-fill: white;" text="80 to 100 percent of daily" />
+                </children>
+            </HBox>
+
+        </VBox>
+    </children>
+
+</AnchorPane>
