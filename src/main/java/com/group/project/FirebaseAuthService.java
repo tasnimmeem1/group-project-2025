@@ -6,6 +6,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class FirebaseAuthService {
+    public static String userIdToken = null;  // used by DB requests
+    public static String userEmail = null;    // optional, just for convenience
+
     public String signUp(String email, String password) throws IOException {
         String jsonInput = """
             {

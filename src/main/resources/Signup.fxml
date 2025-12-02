@@ -12,6 +12,7 @@
                   -fx-background-size: cover;
                   -fx-background-position: center center;">
 
+
     <children>
         <!-- Center white card -->
         <VBox alignment="CENTER"

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group.project.MyRecipesController"
+            prefWidth="1100.0" prefHeight="600.0">
+
+
+    <children>
+
+        <VBox spacing="20"
+              fillWidth="true"
+              AnchorPane.topAnchor="20.0"
+              AnchorPane.bottomAnchor="20.0"
+              AnchorPane.leftAnchor="20.0"
+              AnchorPane.rightAnchor="20.0">
+
+            <!-- Title -->
+            <Label text="My Recipe"
+                   style="-fx-font-family: 'Times New Roman';
+                          -fx-font-size: 40px;
+                          -fx-text-fill: #27c4cf;" />
+
+            <!-- Main content: 3 columns -->
+            <HBox spacing="20">
+
+                <!-- Left: filters + buttons -->
+                <VBox spacing="15" prefWidth="280"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 8;
+                             -fx-font-family: 'Times New Roman';">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <children>
+                        <!-- Filter dropdowns -->
+                        <ChoiceBox fx:id="myCuisineChoicebox"
+                                   prefWidth="200" />
+
+                        <ChoiceBox fx:id="myProteinChoicebox"
+                                   prefWidth="200" />
+
+                        <ChoiceBox fx:id="myLengthChoicebox"
+                                   prefWidth="200" />
+
+                        <ChoiceBox fx:id="myDiffChoicebox"
+                                   prefWidth="200" />
+
+                        <!-- Spacer -->
+                        <Region prefHeight="40" VBox.vgrow="ALWAYS" />
+
+                        <!-- Buttons -->
+                        <Button text="My Recipe"
+                                onAction="#showMyRecipes"
+                                prefWidth="220" prefHeight="50"
+                                style="-fx-font-family: 'Times New Roman';
+                                       -fx-font-size: 16px;
+                                       -fx-background-color: #eaeaea;
+                                       -fx-background-radius: 4;" />
+
+                        <Button text="Back to Home"
+                                onAction="#goBackHome"
+                                prefWidth="220" prefHeight="50"
+                                style="-fx-font-family: 'Times New Roman';
+                                       -fx-font-size: 16px;
+                                       -fx-background-color: #eaeaea;
+                                       -fx-background-radius: 4;" />
+                    </children>
+                </VBox>
+
+                <!-- Middle: recipes list -->
+                <VBox spacing="10"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 8;
+                             -fx-font-family: 'Times New Roman';">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <children>
+                        <Label text="Recipes:"
+                               style="-fx-font-size: 22px;
+                                      -fx-font-weight: bold;" />
+
+                        <ListView fx:id="recipeList"
+                                  prefWidth="400"
+                                  prefHeight="500" />
+                    </children>
+                </VBox>
+
+                <!-- Right: recipe details + grocery button -->
+                <VBox spacing="10" prefWidth="380"
+                      style="-fx-background-color: white;
+                             -fx-background-radius: 8;
+                             -fx-font-family: 'Times New Roman';">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+
+                    <children>
+                        <Label text="Recipe Details:"
+                               style="-fx-font-size: 22px;
+                                      -fx-font-weight: bold;" />
+
+                        <TextArea fx:id="recipeDetails"
+                                  prefWidth="340"
+                                  prefHeight="450"
+                                  wrapText="true" />
+
+                        <Button text="Grocery list for this recipe"
+                                onAction="#openGroceryForSelected"
+                                prefWidth="260" prefHeight="40"
+                                style="-fx-font-family: 'Times New Roman';
+               -fx-font-size: 14;
+               -fx-background-color: #eaeaea;
+               -fx-background-radius: 4;" />
+
+                    </children>
+                </VBox>
+
+            </HBox>
+        </VBox>
+
+    </children>
+</AnchorPane>
