@@ -1,0 +1,72 @@
+{
+  "banana pancake": {
+    "calories": 350,
+    "carbs": 45,
+    "fat": 10,
+    "protein": 8,
+    "vitamins": 12
+  },
+  "beef taco": {
+    "calories": 450,
+    "carbs": 50,
+    "fat": 15,
+    "protein": 20,
+    "vitamins": 5
+  },
+  "caesar salad": {
+    "calories": 250,
+    "carbs": 20,
+    "fat": 18,
+    "protein": 10,
+    "vitamins": 30
+  },
+  "chicken biryani": {
+    "calories": 600,
+    "carbs": 70,
+    "fat": 22,
+    "protein": 25,
+    "vitamins": 10
+  },
+  "chicken salad": {
+    "calories": 300,
+    "carbs": 10,
+    "fat": 12,
+    "protein": 25,
+    "vitamins": 20
+  },
+  "egg omelette": {
+    "calories": 220,
+    "carbs": 3,
+    "fat": 18,
+    "protein": 14,
+    "vitamins": 8
+  },
+  "fruit smoothie": {
+    "calories": 200,
+    "carbs": 45,
+    "fat": 2,
+    "protein": 5,
+    "vitamins": 20
+  },
+  "grilled salmon": {
+    "calories": 380,
+    "carbs": 0,
+    "fat": 22,
+    "protein": 34,
+    "vitamins": 15
+  },
+  "lentil soup": {
+    "calories": 250,
+    "carbs": 40,
+    "fat": 3,
+    "protein": 14,
+    "vitamins": 25
+  },
+  "veggie pasta": {
+    "calories": 450,
+    "carbs": 65,
+    "fat": 8,
+    "protein": 15,
+    "vitamins": 18
+  }
+}

@@ -1,0 +1,15 @@
+com\group\project\FirebaseAuthService.class
+com\group\project\GroceryListController.class
+com\group\project\FirestoreService.class
+com\group\project\SignupController.class
+com\group\project\CalorieCalculatorController.class
+com\group\project\HomePageController.class
+com\group\project\FirebaseRecipeService$RecipeNutrition.class
+com\group\project\SaveRecipeController.class
+com\group\project\MyRecipesController.class
+com\group\project\RecipeModel.class
+com\group\project\LoginController.class
+com\group\project\FirebaseConfig.class
+com\group\project\FirebaseRecipeService.class
+com\group\project\FirebaseMyRecipesService.class
+com\group\project\Recipe.class

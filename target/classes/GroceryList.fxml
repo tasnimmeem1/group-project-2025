@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group.project.GroceryListController"
+            prefWidth="900.0"
+            prefHeight="600.0"
+            style="-fx-background-color: #ffffff;">
+    <children>
+        <VBox spacing="12"
+              prefWidth="880.0"
+              prefHeight="580.0"
+              layoutX="10.0"
+              layoutY="10.0"
+              style="-fx-background-color: #f5f5f5; -fx-padding: 20;">
+            <children>
+
+                <!-- Title -->
+                <Label text="Grocery list"
+                       style="-fx-font-family: 'Times New Roman'; -fx-font-size: 28;" />
+
+                <!-- Grocery items list -->
+                <ListView fx:id="groceryListView"
+                          prefHeight="380.0"
+                          style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" />
+
+                <!-- Add-item row -->
+                <HBox spacing="10">
+                    <children>
+                        <TextField fx:id="txtNewItem"
+                                   promptText="Add grocery item (e.g., 2 lbs chicken, 1 onion)"
+                                   HBox.hgrow="ALWAYS"
+                                   style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" />
+                        <Button text="Add"
+                                onAction="#handleAddItem"
+                                prefWidth="80"
+                                style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" />
+                        <Button text="Remove"
+                                onAction="#handleRemoveSelected"
+                                prefWidth="90"
+                                style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" />
+                    </children>
+                </HBox>
+
+                <!-- Info label (source recipe / status) -->
+                <Label fx:id="lblSourceRecipe"
+                       text="You can generate a list from a recipe, or type your own items."
+                       style="-fx-font-family: 'Times New Roman'; -fx-font-size: 12; -fx-text-fill: #666666;" />
+
+                <!-- Bottom buttons -->
+                <HBox spacing="12">
+                    <children>
+                        <Button text="Back to My Recipes"
+                                onAction="#goBackToMyRecipes"
+                                prefWidth="150"
+                                style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" />
+                        <Button text="Back to Home"
+                                onAction="#goBackHome"
+                                prefWidth="130"
+                                style="-fx-font-family: 'Times New Roman'; -fx-font-size: 14;" />
+                    </children>
+                </HBox>
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
