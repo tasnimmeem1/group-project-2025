@@ -1,6 +1,7 @@
 package com.group.project;
 
 public class RecipeModel {
+
     private final String id;
     private final String name;
     private final String cuisine;

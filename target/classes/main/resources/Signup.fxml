@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.group.project.SignupController"
+           prefWidth="1280.0" prefHeight="720.0"
+           style="-fx-background-image: url('/images/signupBackground.jpg');
+                  -fx-background-size: cover;
+                  -fx-background-position: center center;">
+
+
+    <children>
+        <!-- Center white card -->
+        <VBox alignment="CENTER"
+              spacing="10"
+              prefWidth="420"
+              maxWidth="420"
+              style="-fx-background-color: rgba(255,255,255,0.96);
+                     -fx-background-radius: 18;">
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+
+            <Label text="Create Account"
+                   style="-fx-font-size: 26px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #333333;"/>
+
+            <!-- Full name (optional, not used in controller yet) -->
+            <Label text="Full Name" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="txtName"
+                       promptText="Enter your full name"
+                       prefWidth="360" prefHeight="36"
+                       style="-fx-background-radius: 8; -fx-border-radius: 8;"/>
+
+            <!-- Username (optional) -->
+            <Label text="Username" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="txtUsername"
+                       promptText="Choose a username"
+                       prefWidth="360" prefHeight="36"
+                       style="-fx-background-radius: 8; -fx-border-radius: 8;"/>
+
+            <!-- Address (optional) -->
+            <Label text="Address" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="txtAddress"
+                       promptText="Enter your address"
+                       prefWidth="360" prefHeight="36"
+                       style="-fx-background-radius: 8; -fx-border-radius: 8;"/>
+
+            <!-- Email -->
+            <Label text="Email" style="-fx-font-size: 14px;"/>
+            <TextField fx:id="emailField"
+                       promptText="Enter your email"
+                       prefWidth="360" prefHeight="36"
+                       style="-fx-background-radius: 8; -fx-border-radius: 8;"/>
+
+            <!-- Password -->
+            <Label text="Password" style="-fx-font-size: 14px;"/>
+            <PasswordField fx:id="passwordField"
+                           promptText="Enter your password"
+                           prefWidth="360" prefHeight="36"
+                           style="-fx-background-radius: 8; -fx-border-radius: 8;"/>
+
+            <!-- Confirm Password -->
+            <Label text="Confirm Password" style="-fx-font-size: 14px;"/>
+            <PasswordField fx:id="confirmPasswordField"
+                           promptText="Re enter your password"
+                           prefWidth="360" prefHeight="36"
+                           style="-fx-background-radius: 8; -fx-border-radius: 8;"/>
+
+            <!-- Buttons row -->
+            <HBox alignment="CENTER" spacing="12">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <Button text="SIGN UP"
+                        onAction="#handleSignup"
+                        prefWidth="150" prefHeight="40"
+                        style="-fx-background-color: #2E8BDA;
+                               -fx-background-radius: 8;
+                               -fx-text-fill: white;
+                               -fx-font-size: 14px;
+                               -fx-font-weight: bold;"/>
+
+                <Button text="Back to Login"
+                        onAction="#backToLogin"
+                        prefWidth="150" prefHeight="40"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: #2E8BDA;
+                               -fx-border-radius: 8;
+                               -fx-text-fill: #2E8BDA;
+                               -fx-font-size: 14px;"/>
+            </HBox>
+
+            <Label fx:id="errorLabel"
+                   style="-fx-text-fill: red; -fx-font-size: 13px;"/>
+        </VBox>
+    </children>
+</StackPane>

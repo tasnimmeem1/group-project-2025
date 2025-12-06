@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.group.project.SaveRecipeController"
+            prefWidth="900" prefHeight="600"
+            style="-fx-background-color: #f5f5f5;">
+
+    <children>
+        <VBox spacing="20"
+              AnchorPane.topAnchor="20"
+              AnchorPane.bottomAnchor="20"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20">
+
+            <!-- Title -->
+            <Label text="Save a Recipe"
+                   style="-fx-font-family: 'Times New Roman';
+                          -fx-font-size: 32px;
+                          -fx-text-fill: #27c4cf;" />
+
+            <GridPane hgap="15" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="25" />
+                    <ColumnConstraints percentWidth="75" />
+                </columnConstraints>
+
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+
+                <!-- Name -->
+                <children>
+                    <Label text="Recipe Name:"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0"
+                           style="-fx-font-family: 'Times New Roman';" />
+                    <TextField fx:id="txtName"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"
+                               promptText="Enter recipe name" />
+
+                    <!-- Cuisine dropdown -->
+                    <Label text="Cuisine:"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0"
+                           style="-fx-font-family: 'Times New Roman';" />
+                    <ChoiceBox fx:id="choiceCuisine"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"
+                               prefWidth="250" />
+
+                    <!-- Protein dropdown -->
+                    <Label text="Protein:"
+                           GridPane.rowIndex="2" GridPane.columnIndex="0"
+                           style="-fx-font-family: 'Times New Roman';" />
+                    <ChoiceBox fx:id="choiceProtein"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"
+                               prefWidth="250" />
+
+                    <!-- Time dropdown -->
+                    <Label text="Time:"
+                           GridPane.rowIndex="3" GridPane.columnIndex="0"
+                           style="-fx-font-family: 'Times New Roman';" />
+                    <ChoiceBox fx:id="choiceTime"
+                               GridPane.rowIndex="3" GridPane.columnIndex="1"
+                               prefWidth="250" />
+
+                    <!-- Difficulty dropdown -->
+                    <Label text="Difficulty:"
+                           GridPane.rowIndex="4" GridPane.columnIndex="0"
+                           style="-fx-font-family: 'Times New Roman';" />
+                    <ChoiceBox fx:id="choiceDifficulty"
+                               GridPane.rowIndex="4" GridPane.columnIndex="1"
+                               prefWidth="250" />
+
+                    <!-- Details text area -->
+                    <Label text="Details (ingredients and steps):"
+                           GridPane.rowIndex="5" GridPane.columnIndex="0"
+                           style="-fx-font-family: 'Times New Roman';" />
+                    <TextArea fx:id="txtDetails"
+                              GridPane.rowIndex="5" GridPane.columnIndex="1"
+                              prefRowCount="8"
+                              wrapText="true"
+                              promptText="Write ingredients and steps here" />
+                </children>
+            </GridPane>
+
+            <!-- Status label -->
+            <Label fx:id="lblStatus"
+                   style="-fx-font-family: 'Times New Roman';
+                          -fx-text-fill: #cc0000;" />
+
+            <!-- Buttons -->
+            <HBox spacing="20">
+                <children>
+                    <Button text="Save Recipe"
+                            onAction="#handleSaveRecipe"
+                            prefWidth="150"
+                            style="-fx-font-family: 'Times New Roman';
+                                   -fx-font-size: 14;
+                                   -fx-background-color: #eaeaea;" />
+
+                    <Button text="Back to My Recipes"
+                            onAction="#goBackToMyRecipes"
+                            prefWidth="170"
+                            style="-fx-font-family: 'Times New Roman';
+                                   -fx-font-size: 14;
+                                   -fx-background-color: #f2f2f2;" />
+
+                    <!-- or change to #goBackHome if you want home -->
+                </children>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
