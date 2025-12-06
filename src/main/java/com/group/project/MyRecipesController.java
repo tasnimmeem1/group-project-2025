@@ -74,19 +74,19 @@ public class MyRecipesController implements Initializable{
         // Fill filters
         if (myCuisineChoicebox != null) {
             myCuisineChoicebox.getItems().addAll(cuisines);
-            myCuisineChoicebox.setValue("Any");
+            myCuisineChoicebox.setValue("Any cuisine");
         }
         if (myProteinChoicebox != null) {
             myProteinChoicebox.getItems().addAll(proteins);
-            myProteinChoicebox.setValue("Any");
+            myProteinChoicebox.setValue("Any protein");
         }
         if (myLengthChoicebox != null) {
             myLengthChoicebox.getItems().addAll(times);
-            myLengthChoicebox.setValue("Any");
+            myLengthChoicebox.setValue("No specific length");
         }
         if (myDiffChoicebox != null) {
             myDiffChoicebox.getItems().addAll(difficulties);
-            myDiffChoicebox.setValue("Any");
+            myDiffChoicebox.setValue("Any difficulty");
         }
 
         // Load recipes from Firebase
