@@ -10,7 +10,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -74,19 +73,19 @@ public class MyRecipesController implements Initializable{
         // Fill filters
         if (myCuisineChoicebox != null) {
             myCuisineChoicebox.getItems().addAll(cuisines);
-            myCuisineChoicebox.setValue("Any cuisine");
+            myCuisineChoicebox.setValue("Any");
         }
         if (myProteinChoicebox != null) {
             myProteinChoicebox.getItems().addAll(proteins);
-            myProteinChoicebox.setValue("Any protein");
+            myProteinChoicebox.setValue("Any");
         }
         if (myLengthChoicebox != null) {
             myLengthChoicebox.getItems().addAll(times);
-            myLengthChoicebox.setValue("No specific length");
+            myLengthChoicebox.setValue("Any");
         }
         if (myDiffChoicebox != null) {
             myDiffChoicebox.getItems().addAll(difficulties);
-            myDiffChoicebox.setValue("Any difficulty");
+            myDiffChoicebox.setValue("Any");
         }
 
         // Load recipes from Firebase
